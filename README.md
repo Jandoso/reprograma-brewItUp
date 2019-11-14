@@ -1,4 +1,4 @@
-/Projeto Final | Backend | {reprograma} + Mercado Livre 
+Projeto Final | Backend | {reprograma} + Mercado Livre 
 
 ### Introdução
 A Brew It Up é uma plataforma que integra pequenas cervejarias e distribuidoras, permitindo a distribuição de pequenas produções em regiões não antes atendidas e maior diversidade e qualidade de produtos para os distribuidores.
@@ -20,12 +20,12 @@ PUT /:id/produtos Rota que atualiza a quantidade de um certo item de determinada
 DELETE /:id Rota que deleta um item baseado em seu id. HTTP 204
 
 ### Techs: 
-HTML + CSS
-React
-NodeJS
-API REST
-MongoDB
-Heroku
+- HTML + CSS
+- React
+- NodeJS
+- API REST
+- MongoDB
+- Heroku
 
 ### Sobre mim
 Caroline Jandoso, Piracicabana de 27 anos, apixonada por tecnologia, fermentação e viagens. Bióloga de formação, Beer Sommelière por paixão e Web Developer Full Stack por vocação. 
