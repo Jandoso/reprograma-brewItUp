@@ -4,7 +4,7 @@ Projeto Final | Backend | {reprograma} + Mercado Livre
 A Brew It Up é uma plataforma que integra pequenas cervejarias e distribuidoras.O objetivo é permitir a distribuição de pequenas produções em regiões não antes atendidas, além de prover maior diversidade, disponibilidade e qualidade de produtos para os distribuidores.
 
 ### Cenário
-Em 2019, atingimos a marca de mais de 800 cervejarias inscritas no MAPA - Ministério da Agricultura e Produção Agropecuária. Grande parte destas cervejarias não possuem estrutura de logística e atendimento, dificultando a expansão de suas vendas. Outra questão importante que preocupa os pequenos produtores é com a qualidade com que seus produtos irão chegar até os pontos de vendas, afinal há uma grande tendência de produção de cervejas não pasteurizadas, necessitando de cadeia refrigerada. 
+Em 2019, atingimos a marca de mais de 800 cervejarias inscritas no MAPA - Ministério da Agricultura e Produção Agropecuária. Grande parte destas cervejarias não possuem estrutura de logística e atendimento, dificultando a expansão de suas vendas. Outra questão importante que preocupa os pequenos produtores é com a qualidade com que seus produtos irão chegar até os pontos de vendas, afinal há uma grande tendência de produção de cervejas não pasteurizadas, necessitando de cadeia refrigerada. </br>
 Por outro lado, diversas distribuidoras apresentam capacidade ociosa em sua estrutura logística e de atendimento ao cliente. Algumas destas distribuidoras também enfrantam a falta de produtos no mercado, prejudicando o atendimento aos pontos de vendas. 
 
 ### Rotas/EndPoints
