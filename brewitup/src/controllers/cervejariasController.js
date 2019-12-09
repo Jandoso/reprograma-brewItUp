@@ -19,3 +19,7 @@ exports.post = (req, res) => {
         res.status(201).send(cervejaria);
     });
 };
+
+exports.delete = (req, res) => {
+    const id = req.params.id;
+};

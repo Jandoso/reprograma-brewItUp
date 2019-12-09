@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 //Mongo DB
-mongoose.connect('mongodb://localhost:27017/brewitup', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://jandosoGeneral:12345@omnistack-34kgb.mongodb.net/brewitup?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', console.log.bind(console, 'connection error:'))
@@ -19,9 +19,17 @@ app.use(bodyParser.json());
 const index = require('./routes/index');
 const cervejarias = require('./routes/cervejariasRoute');
 const distribuidores = require('./routes/distribuidoresRoute');
+const session = require('../src/routes/sessionRoute');
 
+<<<<<<< HEAD:backend/src/app.js
 app.use('/api', index);
 app.use('/api/cervejarias', cervejarias);
 app.use('/api/distribuidores', distribuidores);
+=======
+app.use('/', index);
+app.use('/cervejarias', cervejarias);
+app.use('/distribuidores', distribuidores);
+app.use('/session', session);
+>>>>>>> cf75f7b512ecadab0d3825d674954ddec26af9d6:brewitup/src/app.js
 
 module.exports = app;
