@@ -1,30 +1,62 @@
 const mongoose = require('mongoose');
 
 const CervejariasSchema = new mongoose.Schema({
-    nomeFantasia: String,
-    telefone: String,
-    cnpj: String,
-    endereco: {
-     nomeRua: String,
-     numero: Number,
-     bairro: String,
-     cidade: String,
-     estado: String,
-     cep: String
-     },
-     cervejas: [{
-         nome: String,
-         estilo: String,
-         escola: String,
-         teorAlcoolico: Number,
-         embalagem: String,
-         volume: Number,
-         quantidade: Number,
-         preco: Number,
-         descricao: String,
-         pasteurizada: Boolean
+    nomeFantasia: {
+        type: String, 
+        required: true,
+        maxlength: 100
+    },
+    razaoSocial: {
+        type: String, 
+        required: true,
+        maxlength: 100
+    },
+    telefone: {
+        type: Number, 
+        required: true,
+        maxlength: 32
+    },
+    cnpj: {
+        type: Number, 
+        required: true,
+        maxlength: 32
+    },
+    endereco: [{
+        nomeRua: {
+        type: String, 
+        required: true,
+        maxlength: 100
+    },
+     numero: {
+        type: Number, 
+        required: true,
+        maxlength: 6
+    },
+     bairro: {
+        type: String, 
+        required: true,
+        maxlength: 32
+    },
+     cidade: {
+        type: String, 
+        required: true,
+        maxlength: 32
+    },
+     estado: {
+        type: String, 
+        required: true,
+        maxlength: 32
+    },
+     cep: {
+        type: Number, 
+        required: true,
+        maxlength: 8
+    }
      }]
-});
+}, {
+    timestamps: true
+}
+);
 
 const Cervejarias = mongoose.model('Cervejarias', CervejariasSchema);
 

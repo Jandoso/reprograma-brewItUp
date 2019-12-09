@@ -20,8 +20,8 @@ const index = require('./routes/index');
 const cervejarias = require('./routes/cervejariasRoute');
 const distribuidores = require('./routes/distribuidoresRoute');
 
-app.use('/', index);
-app.use('/cervejarias', cervejarias);
-app.use('/distribuidores', distribuidores);
+app.use('/api', index);
+app.use('/api/cervejarias', cervejarias);
+app.use('/api/distribuidores', distribuidores);
 
 module.exports = app;

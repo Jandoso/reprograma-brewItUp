@@ -9,18 +9,6 @@ exports.get = (req, res) => {
     });
 };
 
-exports.getProductsByBreweryId = (req, res) => {
-    const cervejariaId = req.params.id;
-
-    Cervejarias.findById(cervejariaId, function (err, cervejaria) {
-        if(err) return res.status(500).send(err);
-        if(!cervejaria){
-            return res.status(200).send({ message: "Infelizmente não pudemos localizar esta cervejaria"})
-        }
-        res.status(200).send(cervejaria.cervejas);
-    })
-}
-
 // Rotas Post
 
 exports.post = (req, res) => {
