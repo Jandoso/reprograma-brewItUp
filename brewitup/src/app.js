@@ -19,14 +19,15 @@ app.use(bodyParser.json());
 const index = require('./routes/index');
 const cervejarias = require('./routes/cervejariasRoute');
 const distribuidores = require('./routes/distribuidoresRoute');
-const cervejas = require('../src/routes/cervejasRoutes');
-//const session = require('../src/routes/sessionRoute');
-
+const cervejas = require('./routes/cervejasRoutes');
+const cervejariasAuth = require('./routes/cervejariasAuthRoutes');
+const distribuidoresAuth = require('./routes/distribuidoresAuthRoutes');
 
 app.use('/api/', index);
+app.use('/api/cervejarias', cervejariasAuth);
 app.use('/api/cervejarias', cervejarias);
 app.use('/api/cervejas', cervejas);
+app.use('/api/distribuidores', distribuidoresAuth);
 app.use('/api/distribuidores', distribuidores);
-//app.use('/api/session', session);
 
 module.exports = app;

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 const uuidv1 = require('uuid/v1');
 
-const CervejariaUsuarioSchema = new mongoose.Schema({
+const DistribuidorUsuarioSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
@@ -15,7 +15,7 @@ const CervejariaUsuarioSchema = new mongoose.Schema({
     salt: String,
     role: {
         type: Number,
-        default: 0
+        default: 1
     }
 }, {
     timestamps: true
@@ -23,7 +23,7 @@ const CervejariaUsuarioSchema = new mongoose.Schema({
 );
 
 
-CervejariaUsuarioSchema
+DistribuidorUsuarioSchema
     .virtual("password")
     .set(function(password) {
         this._password = password;
@@ -34,7 +34,7 @@ CervejariaUsuarioSchema
         return this._password;
     });
 
-    CervejariaUsuarioSchema.methods = {
+    DistribuidorUsuarioSchema.methods = {
     authenticate: function(plainText) {
         return this.encryptPassword(plainText) === this.hashed_password;
     },
@@ -53,7 +53,6 @@ CervejariaUsuarioSchema
 };
 
 
+const DistribuidorUsuario = mongoose.model('DistribuidorUsuario', DistribuidorUsuarioSchema);
 
-const CervejariaUsuario = mongoose.model('CervejariaUsuario', CervejariaUsuarioSchema);
-
-module.exports = CervejariaUsuario;
+module.exports = DistribuidorUsuario;

@@ -1,4 +1,4 @@
-const Distribuidores = require('../models/distribuidores');
+const Distribuidores = require('../models/distribuidor');
 
 exports.get = (req, res) => {
     Distribuidores.find(function (err, distribuidores) {

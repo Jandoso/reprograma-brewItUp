@@ -1,4 +1,4 @@
-const Cervejas = require('../models/cervejas');
+const Cervejas = require('../models/cerveja');
 const formidable = require('formidable');
 const _ = require('lodash');
 const fs = require('fs');

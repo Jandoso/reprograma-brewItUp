@@ -1,6 +1,5 @@
-const Cervejarias = require('../models/cervejarias');
+const Cervejarias = require('../models/cervejaria');
 
-//Rotas Get
 
 exports.get = (req, res) => {
     Cervejarias.find(function (err, cervejarias) {
@@ -8,8 +7,6 @@ exports.get = (req, res) => {
         res.status(200).send(cervejarias);
     });
 };
-
-// Rotas Post
 
 exports.post = (req, res) => {
     const cervejaria = new Cervejarias(req.body);
