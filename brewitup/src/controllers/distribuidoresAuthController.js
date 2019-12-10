@@ -39,10 +39,15 @@ exports.login = async (req, res) => {
                 error: "Senha incorreta"
             })
         }
-        
+
         const token = jwt.sign({_id: distribuidorUsuario._id}, authConfig.secret)
         res.cookie('t', token, {expire: authConfig.expiresIn})
         const {_id, email} = distribuidorUsuario;
         return res.json({token, distribuidorUsuario: _id, email})
     });
+};
+
+exports.logout = (req, res) => {
+    res.clearCookie('t')
+    res.json({message: "Deslogado com Sucesso!"});
 };

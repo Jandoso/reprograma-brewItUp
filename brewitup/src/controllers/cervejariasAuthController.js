@@ -47,3 +47,8 @@ exports.login = async (req, res) => {
         return res.json({token, cervejariaUsuario: {_id, email}})
     });
 };
+
+exports.logout = (req, res) => {
+    res.clearCookie('t')
+    res.json({message: "Deslogado com Sucesso!"});
+};
