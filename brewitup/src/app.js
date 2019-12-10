@@ -19,17 +19,14 @@ app.use(bodyParser.json());
 const index = require('./routes/index');
 const cervejarias = require('./routes/cervejariasRoute');
 const distribuidores = require('./routes/distribuidoresRoute');
-const session = require('../src/routes/sessionRoute');
+const cervejas = require('../src/routes/cervejasRoutes');
+//const session = require('../src/routes/sessionRoute');
 
-<<<<<<< HEAD:backend/src/app.js
-app.use('/api', index);
+
+app.use('/api/', index);
 app.use('/api/cervejarias', cervejarias);
+app.use('/api/cervejas', cervejas);
 app.use('/api/distribuidores', distribuidores);
-=======
-app.use('/', index);
-app.use('/cervejarias', cervejarias);
-app.use('/distribuidores', distribuidores);
-app.use('/session', session);
->>>>>>> cf75f7b512ecadab0d3825d674954ddec26af9d6:brewitup/src/app.js
+//app.use('/api/session', session);
 
 module.exports = app;

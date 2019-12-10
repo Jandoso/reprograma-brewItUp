@@ -53,7 +53,7 @@ const cervejasSchema = new mongoose.Schema({
         required: true,
         maxlength: 32
     },
-    photo: {
+    foto: {
         data: Buffer,
         contentType: String
     }
