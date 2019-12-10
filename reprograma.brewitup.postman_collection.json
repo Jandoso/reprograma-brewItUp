@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "3206bc39-2968-42d9-8b6e-d54704fefe9e",
+		"name": "reprograma.brewitup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/cervejarias/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nomeFantasia\": \"A Tutta Birra - Birrificio Artiginale\",\r\n    \"razaoSocial\": \"Eugenio Lorenzo Caputi Eireli\",\r\n    \"telefone\": 19981203354,\r\n    \"cnpj\": 123456789000101,\r\n    \"endereco\": [\r\n        {\"nomeRua\":\"Avenida Cassio Pascoal Padovani\",\r\n    \t\"numero\": 3197,\r\n    \t\"bairro\": \"Água Seca\",\r\n    \t\"cidade\": \"Piracicaba\",\r\n    \t\"estado\": \"São Paulo\",\r\n    \t\"cep\": 13425130}\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cervejarias/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cervejarias",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/distribuidores/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nomeFantasia\": \"LogBrew\",\r\n    \"razaoSocial\": \"logBrew Distribuidora Ltda\",\r\n    \"endereco\": [{\r\n        \"nomeRua\": \"Rua Leogildo Salvagni\",\r\n        \"numero\": 816,\r\n        \"bairro\": \"Parque Primeiro de Maio\",\r\n        \"cidade\": \"Piracicaba\",\r\n        \"cep\": 13425130\r\n    }],\r\n    \"telefone\": 19981203354,\r\n    \"cnpj\": 123456789000110,\r\n    \"camaraFria\": true,\r\n    \"caminhaoRefrigerado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/distribuidores/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"distribuidores",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/distribuidores/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nomeFantasia\": \"LogBrew\",\r\n    \"razaoSocial\": \"logBrew Distribuidora Ltda\",\r\n    \"endereco\": [{\r\n        \"nomeRua\": \"Rua Leogildo Salvagni\",\r\n        \"numero\": 816,\r\n        \"bairro\": \"Parque Primeiro de Maio\",\r\n        \"cidade\": \"Piracicaba\",\r\n        \"cep\": 13425130\r\n    }],\r\n    \"telefone\": 19981203354,\r\n    \"cnpj\": 123456789000110,\r\n    \"camaraFria\": true,\r\n    \"caminhaoRefrigerado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/distribuidores/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"distribuidores",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/cervejarias/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"nomeFantasia\": \"LogBrew\",\r\n    \"razaoSocial\": \"logBrew Distribuidora Ltda\",\r\n    \"endereco\": [{\r\n        \"nomeRua\": \"Rua Leogildo Salvagni\",\r\n        \"numero\": 816,\r\n        \"bairro\": \"Parque Primeiro de Maio\",\r\n        \"cidade\": \"Piracicaba\",\r\n        \"cep\": 13425130\r\n    }],\r\n    \"telefone\": 19981203354,\r\n    \"cnpj\": 123456789000110,\r\n    \"camaraFria\": true,\r\n    \"caminhaoRefrigerado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cervejarias/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cervejarias",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/cervejas/lista/5deed0308a02c44be455657a",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Caputi",
+							"type": "text"
+						},
+						{
+							"key": "estilo",
+							"value": "American Stadart Lager",
+							"type": "text"
+						},
+						{
+							"key": "escola",
+							"value": "Americana",
+							"type": "text"
+						},
+						{
+							"key": "teorAlcoolico",
+							"value": "3.8",
+							"type": "text"
+						},
+						{
+							"key": "embalagem",
+							"value": "Garrafa de vidro",
+							"type": "text"
+						},
+						{
+							"key": "volume",
+							"value": "600",
+							"type": "text"
+						},
+						{
+							"key": "quantidade",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "preco",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "cervejaria",
+							"value": "5deed0308a02c44be455657a",
+							"type": "text"
+						},
+						{
+							"key": "descricao",
+							"value": "A CAPUTI MUNICH HELLES é uma cerveja de baixa fermentação que tem sua origem na cidade de Munique na Alemanha. Possui coloração do amarelo intenso para dourado, tem aromas maltados e florais e apresenta sabor maltado bem equilibrado com o amargor. É produzida apenas com maltes e lúpulos alemães que confere uma excelente qualidade a cerveja, com 5,2% de teor alcoólico é uma cerveja leve e refrescante, excelente para o dia a dia.\n",
+							"type": "text"
+						},
+						{
+							"key": "pasteurizada",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/C:/Users/reprograma/Desktop/reprograma/reprograma-brewItUp/brewitup/src/assets/atuttabirra-caputi.png"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cervejas/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cervejas",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/cervejas/lista/5deed0308a02c44be455657a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Caputi",
+							"type": "text"
+						},
+						{
+							"key": "estilo",
+							"value": "American Stadart Lager",
+							"type": "text"
+						},
+						{
+							"key": "escola",
+							"value": "Americana",
+							"type": "text"
+						},
+						{
+							"key": "teorAlcoolico",
+							"value": "3.8",
+							"type": "text"
+						},
+						{
+							"key": "embalagem",
+							"value": "Garrafa de vidro",
+							"type": "text"
+						},
+						{
+							"key": "volume",
+							"value": "600",
+							"type": "text"
+						},
+						{
+							"key": "quantidade",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "preco",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "cervejaria",
+							"value": "5deed0308a02c44be455657a",
+							"type": "text"
+						},
+						{
+							"key": "descricao",
+							"value": "A CAPUTI MUNICH HELLES é uma cerveja de baixa fermentação que tem sua origem na cidade de Munique na Alemanha. Possui coloração do amarelo intenso para dourado, tem aromas maltados e florais e apresenta sabor maltado bem equilibrado com o amargor. É produzida apenas com maltes e lúpulos alemães que confere uma excelente qualidade a cerveja, com 5,2% de teor alcoólico é uma cerveja leve e refrescante, excelente para o dia a dia.\n",
+							"type": "text"
+						},
+						{
+							"key": "pasteurizada",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "foto",
+							"type": "file",
+							"src": "/C:/Users/reprograma/Desktop/reprograma/reprograma-brewItUp/brewitup/src/assets/atuttabirra-caputi.png"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cervejas/lista/5deed0308a02c44be455657a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cervejas",
+						"lista",
+						"5deed0308a02c44be455657a"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
