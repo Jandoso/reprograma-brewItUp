@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6b8fccce-4634-4bf0-9669-9688f5aa320d",
+		"_postman_id": "3d5ee88b-eb0a-4b80-ab56-7cb74d8ea4d1",
 		"name": "reprograma.brewitup",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -343,7 +343,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/cervejas/lista/5deed0308a02c44be455657a",
+					"raw": "http://localhost:8080/api/cervejas/5deed0308a02c44be455657a",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -352,7 +352,6 @@
 					"path": [
 						"api",
 						"cervejas",
-						"lista",
 						"5deed0308a02c44be455657a"
 					]
 				}
@@ -582,6 +581,80 @@
 						"api",
 						"cervejarias",
 						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/cervejas/5deee62999494c3994a615f6",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"volume\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cervejas/5deee62999494c3994a615f6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cervejas",
+						"5deee62999494c3994a615f6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/cervejas/5deee62999494c3994a615f6",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"volume\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cervejas/5deee62999494c3994a615f6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cervejas",
+						"5deee62999494c3994a615f6"
 					]
 				}
 			},
