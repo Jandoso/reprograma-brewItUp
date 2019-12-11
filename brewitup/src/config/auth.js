@@ -1,5 +1,5 @@
 module.exports = {
-    secret: 'e45e682626d2085107c2c5ddcd7594fad5a76634',
+    secret: '393a2c4e6df731040daac627402bb920',
     expiresIn: '2d'
 };
 

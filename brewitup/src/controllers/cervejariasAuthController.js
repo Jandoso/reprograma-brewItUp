@@ -41,10 +41,10 @@ exports.login = async (req, res) => {
             })
         }
 
-        const token = jwt.sign({_id: cervejariaUsuario._id},authConfig.secret)
+        const token = jwt.sign({ id: cervejariaUsuario.id},authConfig.secret)
         res.cookie('t', token, {expire: authConfig.expiresIn})
-        const {_id, email} = cervejariaUsuario
-        return res.json({token, cervejariaUsuario: {_id, email}})
+        const { id, email} = cervejariaUsuario
+        return res.json({token, cervejariaUsuario: { id, email }})
     });
 };
 
@@ -52,3 +52,10 @@ exports.logout = (req, res) => {
     res.clearCookie('t')
     res.json({message: "Deslogado com Sucesso!"});
 };
+
+exports.eCervejaria = async (req, res, next) => {
+    const usuario = await CervejariasUsuarios.find({ id: req.user });
+    if(!usuario) return res.status(401).json({ erro: "Acesso restrito a cervejarias" })
+
+    return next();
+}

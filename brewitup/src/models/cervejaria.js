@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Schema;
 
 const CervejariasSchema = new mongoose.Schema({
     nomeFantasia: {
@@ -10,6 +11,11 @@ const CervejariasSchema = new mongoose.Schema({
         type: String, 
         required: true,
         maxlength: 100
+    },
+    email: {
+        type: ObjectId,
+        ref: "cervejariaUsuario",
+        req: true
     },
     telefone: {
         type: Number, 

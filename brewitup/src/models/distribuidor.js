@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Schema;
 
 const DistribuidoresSchema = new mongoose.Schema({
     nomeFantasia: {
@@ -10,6 +11,21 @@ const DistribuidoresSchema = new mongoose.Schema({
         type: String, 
         required: true,
         maxlength: 100
+    },
+    email: {
+        type: ObjectId,
+        ref: "cervejariaUsuario",
+        req: true
+    },
+    telefone: {
+        type: Number, 
+        required: true,
+        maxlength: 32
+    },
+    cnpj: {
+        type: Number, 
+        required: true,
+        maxlength: 32
     },
     endereco: [{
         nomeRua: {
@@ -38,16 +54,6 @@ const DistribuidoresSchema = new mongoose.Schema({
             maxlength: 8
         }
     }],
-    telefone: {
-        type: Number, 
-        required: true,
-        maxlength: 32
-    },
-    cnpj: {
-        type: Number, 
-        required: true,
-        maxlength: 32
-    },
     camaraFria: {
         type: Boolean, 
         required: true
@@ -55,7 +61,9 @@ const DistribuidoresSchema = new mongoose.Schema({
     caminhaoRefrigerado: {
         type: Boolean, 
         required: true
-    }
+    },
+    equipeComercial: Boolean,
+    sommelier: Boolean 
 }, {
     timestamps: true
 }
