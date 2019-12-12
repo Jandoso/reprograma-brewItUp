@@ -21,13 +21,11 @@ PUT /cervejarias/:id/produtos Rota que atualiza a quantidade de um certo item de
 DELETE /:id Rota que deleta um item baseado em seu id. HTTP 204
 
 ### Techs e conceitos aplicados: 
-- SCRUM
-- UX - Protótipo com Marvel
-- HTML + CSS
-- React
+- Bootstrap
+- EJS
 - NodeJS
 - API REST
-- MongoDB
+- MongoDB - Atlas
 - Heroku
 
 ### Sobre mim
