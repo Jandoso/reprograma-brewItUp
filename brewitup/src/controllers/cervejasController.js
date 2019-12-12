@@ -54,14 +54,14 @@ exports.getCervejasCervejaria = async (req, res) => {
     res.status(200).send(cervejas);
 };
 
-exports.alterarCerveja = (req, res) => {
+exports.alterarCerveja = async (req, res) => {
     if(!validateForm(req.body)) return res.status(400).json({
         mensagem: "Campos inválidos"
     });
 
     const cervejaId = req.params.cervejaId;
 
-    Cervejas.findOne({ _id: cervejaId }, (err, cerveja) => {
+    await Cervejas.findOne({ _id: cervejaId }, (err, cerveja) => {
         if(err) res.status(500).send(err);
 
         if(!cerveja) return res.status(400).json({
@@ -77,8 +77,7 @@ exports.alterarCerveja = (req, res) => {
                 res.status(200).json({ 
                     mensagem: "Produto atualizado com sucesso!"
                 });
-            }
-        );
+            });
     });
 };
 
@@ -108,7 +107,7 @@ exports.excluirCerveja = (req, res) => {
     Cervejas.findOneAndDelete({ _id: cervejaId }, (err, cerveja) => {
         if(err) res.status(500).send(err);
 
-        if(!cerveja) return res.status(200).json({
+        if(!cerveja) return res.status(404).json({
             mensagem: `Cerveja com o código ${cervejaId} não foi localizada`
         })
 
