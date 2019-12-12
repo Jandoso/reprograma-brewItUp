@@ -60,6 +60,6 @@ DELETE api/cervejas/:cervejaId Rota que deleta um item baseado em seu id. HTTP 2
 - Heroku
 
 ### Sobre mim
-Caroline Jandoso, Piracicabana de 27 anos, apaixonada por tecnologia, fermentação e viagens. Bióloga de formação, Beer Sommelière por paixão e Web Developer Full Stack por vocação. 
+Caroline Jandoso, Piracicabana de 27 anos, apaixonada por tecnologia, fermentação e viagens. Bióloga de formação, Beer Sommelière por paixão e Desenvolvedora Backend por vocação. 
 
 Contato: carol.jandoso@gmail.com
