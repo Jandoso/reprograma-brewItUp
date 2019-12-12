@@ -5,6 +5,8 @@ const authMiddleware = require('../middlewares/auth');
 const { eCervejaria } = require('../controllers/cervejariasAuthController');
 
 router.use(authMiddleware);
+
+
 router.get('/:cervejariaId', cervejasController.getCervejasCervejaria);
 router.post('/create', eCervejaria, cervejasController.postCervejas);
 router.put('/:cervejaId', eCervejaria, cervejasController.alterarCerveja);

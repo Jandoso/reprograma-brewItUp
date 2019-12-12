@@ -12,11 +12,7 @@ const DistribuidorUsuarioSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    salt: String,
-    role: {
-        type: Number,
-        default: 1
-    }
+    salt: String
 }, {
     timestamps: true
 }

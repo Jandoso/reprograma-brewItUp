@@ -2,6 +2,10 @@ const DistribuidoresUsuarios = require('../models/distribuidorUsuario');
 const jwt = require('jsonwebtoken');
 const authConfig = require('../config/auth');
 
+exports.get = (req, res) => {
+    res.render("distribuidoresLogin");
+}
+
 exports.registro = async (req, res) => {
     const validarEmail = await DistribuidoresUsuarios.findOneAndDelete({ email: req.body.email });
     if(!validarEmail) {

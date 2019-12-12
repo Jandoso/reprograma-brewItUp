@@ -12,11 +12,7 @@ const CervejariaUsuarioSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    salt: String,
-    role: {
-        type: Number,
-        default: 0
-    }
+    salt: String
 }, {
     timestamps: true
 }

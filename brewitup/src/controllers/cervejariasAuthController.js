@@ -2,6 +2,13 @@ const CervejariasUsuarios = require('../models/cervejariaUsuario');
 const jwt = require('jsonwebtoken');
 const authConfig = require('../config/auth');
 
+exports.getRegistro = (req, res) => {
+    res.render('cervejariasRegistro')
+}
+ 
+exports.getLogin = (req, res) => {
+    res.render('cervejariasLogin')
+}
 
 exports.registro =  async (req, res) => {
     const validarEmail = await CervejariasUsuarios.findOne({ email: req.body.email });

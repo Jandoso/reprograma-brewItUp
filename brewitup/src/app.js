@@ -12,8 +12,15 @@ db.once('open', function() {
     console.log('conexão com banco de dados feita com sucesso');
 });
 
+//ejs como view engine
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
+app.use(express.static('./src/public'));
+
+
 //Body Parser
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 
 //Rotas
 const index = require('./routes/index');
@@ -29,5 +36,9 @@ app.use('/api/cervejarias', cervejarias);
 app.use('/api/cervejas', cervejas);
 app.use('/api/distribuidores', distribuidoresAuth);
 app.use('/api/distribuidores', distribuidores);
+app.use(express.static('doc'));
+app.get('/api-doc', (req, res) => {
+    res.sendFile('../doc/index.html');
+});
 
 module.exports = app;
