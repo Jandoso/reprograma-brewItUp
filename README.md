@@ -8,29 +8,58 @@ Em 2019, atingimos a marca de mais de 800 cervejarias inscritas no MAPA - Minist
 Por outro lado, diversas distribuidoras apresentam capacidade ociosa em sua estrutura logística e de atendimento ao cliente. Algumas destas distribuidoras também enfrantam a falta de produtos no mercado, prejudicando o atendimento aos pontos de vendas. 
 
 ### Rotas/EndPoints
-GET /cervejarias Rota que retorna uma lista com todas as cervejarias cadastradas. HTTP 200 
 
-GET /cervejarias/:id/produtos Rota que retorna uma lista de produtos disponíveis de determinada cervejaria. HTTP 200 
+#### Cervejarias
 
-GET /distribuidores Rota que retorna uma lista com todas as distribuidoras cadastradas. HTTP 200 
+GET /api/cervejarias Rota que retorna uma lista com todas as cervejarias cadastradas. HTTP 200 OK 
 
-POST /cervejaria Rota que recebe uma nova cervejaria, adiciona ela a lista e retorna o item criado. HTTP 201 CREATED
+POST /api/cervejarias/registro Rota para registro de login e senha de cervejarias. HTTP 201 CREATED 
 
-PUT /cervejarias/:id/produtos Rota que atualiza a quantidade de um certo item de determinada cervejaria retorna o item atualizado. HTTP 200 
+POST /api/cervejarias Rota para cadastro completo de cervejarias HTTP 201 CREATED
 
-DELETE /:id Rota que deleta um item baseado em seu id. HTTP 204
+POST /api/cervejarias/login Rota para login de cervejarias HTTP 200 OK
+
+GET /api/cervejarias/logout Rota para logout de cervejarias HTTP 200 0K
+
+PUT
+
+DELETE
+
+### Distribuidores
+
+GET /api/distribuidores Rota que retorna uma lista com todas as distribuidores cadastradas. HTTP 200 OK 
+
+POST /api/distribuidores/registro Rota para registro de login e senha de distribuidores. HTTP 201 CREATED 
+
+POST /api/distribuidores Rota para cadastro completo de distribuidores HTTP 201 CREATED
+
+POST /api/distribuidores/login Rota para login de distribuidores HTTP 200 OK
+
+GET /api/distribuidores/logout Rota para logout de distribuidores HTTP 200 0K
+
+PUT
+
+DELETE
+
+### Cervejas
+
+POST /api/cervejas/create Rota de criação de novas cervejas. Excluiva para cervejarias HTTP 201 CREATED
+
+GET /api/cervejas/:cervejariaId Rota que retorna uma lista de produtos disponíveis de determinada cervejaria. HTTP 200 OK
+
+PUT api/cervejas/:cervejaId Rota que atualiza um certo item de de acordo com seu ID HTTP 200 OK
+
+DELETE api/cervejas/:cervejaId Rota que deleta um item baseado em seu id. HTTP 200 OK
 
 ### Techs e conceitos aplicados: 
-- SCRUM
-- UX - Protótipo com Marvel
-- HTML + CSS
-- React
+- Bootstrap
+- EJS
 - NodeJS
 - API REST
-- MongoDB
+- MongoDB - Atlas
 - Heroku
 
 ### Sobre mim
-Caroline Jandoso, Piracicabana de 27 anos, apaixonada por tecnologia, fermentação e viagens. Bióloga de formação, Beer Sommelière por paixão e Web Developer Full Stack por vocação. 
+Caroline Jandoso, Piracicabana de 27 anos, apaixonada por tecnologia, fermentação e viagens. Bióloga de formação, Beer Sommelière por paixão e Desenvolvedora Backend por vocação. 
 
 Contato: carol.jandoso@gmail.com
