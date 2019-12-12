@@ -2,7 +2,11 @@ const DistribuidoresUsuarios = require('../models/distribuidorUsuario');
 const jwt = require('jsonwebtoken');
 const authConfig = require('../config/auth');
 
-exports.get = (req, res) => {
+exports.getRegistro = (req, res) => {
+    res.render("distribuidoresRegistro")
+}
+
+exports.getLogin = (req, res) => {
     res.render("distribuidoresLogin");
 }
 

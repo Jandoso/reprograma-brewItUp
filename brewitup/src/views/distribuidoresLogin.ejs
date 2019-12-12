@@ -1,34 +1,34 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
+
+    <%- include ("./partials/header.ejs") %>
+    
     <title>Distribuidores - Login</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/sign-in/">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="/css/cervejariasLogin.css" rel="stylesheet">
+    <link href="/css/login.css" rel="stylesheet">
   </head>
 
   <body class="text-center">
+    <div class="formulario">
+
     <form class="form-signin" method="POST" action="/api/distribuidores/login">
-      <img class="mb-4" src="/img/beer.png" alt="" width="72" height="72">
+      <img class="mb-4" src="/img/beer.png" alt="icone de copo de cerveja" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Distribuidores</h1>
       <label for="inputEmail" class="sr-only">Email</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de Email" required autofocus name="email">
+      <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de Email" required autofocus name="email" >
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
+      <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required name="password">
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Lembre de mim
         </label>
       </div>
       <button class="btn btn-lg btn-success btn-block" type="submit">Login</button>
-      <button type="button" class="btn btn-light mt-3">Registre-se</button>
-      <p class="mt-5 mb-3 text-muted">Brew it UP!</p>
     </form>
+  </br>
+    <a href="/api/distribuidores/registro">Registre-se</a>
+    <p class="mt-5 mb-3 text-muted" id="footer">Brew it UP!</p>
+  </div>
   </body>
-</html>
+
+  <%- include ("./partials/footer.ejs") %>

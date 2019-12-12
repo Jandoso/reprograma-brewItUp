@@ -1,17 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <%- include ("./partials/header.ejs") %>
-    <title>Cervejarias - Registro</title>
-    <link href="/css/registro.css" rel="stylesheet">
-  </head>
 
+    <%- include ("./partials/header.ejs") %>
+    
+    <title>Distribuidores - Registro</title>
+        <link href="/css/registro.css" rel="stylesheet">
+  </head>
 <div class="formulario-registro">
 
-<form class="text-center p-5" method="POST" action="/api/cervejarias/registro">
+<form class="text-center p-5" method="POST" action="/api/distribuidores/registro">
         <img class="mb-4" src="/img/beer.png" alt="icone de copo de cerveja" width="72" height="72">
 
-        <h1 class="h3 mb-3 font-weight-normal">Cervejarias</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Distribuidores</h1>
         <p class="h4 mb-4">Registro</p>
     
         <label for="inputEmail" class="sr-only">Email</label>
@@ -33,8 +34,9 @@
                 <a href="" target="_blank">termos de serviço</a>
     
     </form>
-<p class="mt-5 mb-3 text-muted" id="footer">Brew it UP!</p>
-    
+
+    <p class="mt-5 mb-3 text-muted" id="footer">Brew it UP!</p>
+
 </div>
 
 <%- include ("./partials/footer.ejs") %>

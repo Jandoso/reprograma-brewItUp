@@ -1,104 +1,91 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-    <title>Brew it UP!</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link href="/css/style.css" rel="stylesheet">
-  </head>
 
-  <body>
+<head>
+<%- include ("./partials/header.ejs") %>
 
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/api/" style="color: green"><strong>Brew it UP!</strong></a>
-      </nav>
-    </header>
+  <title>Brew it UP!</title>
+  <link href="/css/style.css" rel="stylesheet">
+</head>
 
-    <main role="main">
+<body>
 
-            <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                      <h1 class="display-4"><strong>Brew it UP!</strong></h1>
-                      <p class="lead" style="color: green">Conectando pessoas, ajudando pequenos negócios e distribuindo alegrias</p>
-                    </div>
-                  </div>
+<%- include ("./partials/navbar.ejs") %>
 
-      <div class="container marketing mt-5">
-        <div class="row justify-content-center">
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="/img/distribuidores.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Distribuidores</h2>
-            <p>Ajude a levar cerveja de qualidade e legitimamente artesanal para os quatro cantos do país!</p>
-            <p><a class="btn btn-success" href="/api/distribuidores/login" role="button">Acessar &raquo;</a></p>
-          </div>
-          <div class="col-lg-4">
-            <img class="rounded-circle" src="/img/cervejarias.jpg" alt="Generic placeholder image" width="140" height="140">
-            <h2>Cervejarias</h2>
-            <p>Mostre seu trabalho e divida seus sonhos com milhares de consumidores por todo o país!</p>
-            <p><a class="btn btn-success" href="/api/cervejarias/login" role="button">Acessar &raquo;</a></p>
-          </div>
+  <main role="main">
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4"><strong>Brew it UP!</strong></h1>
+        <p class="lead" style="color: green">Conectando pessoas, ajudando pequenos negócios e distribuindo alegrias</p>
+      </div>
+    </div>
+
+    <div class="container marketing mt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-4">
+          <img class="rounded-circle" src="/img/distribuidores.jpg" alt="Imagem de caminhão" width="140"
+            height="140">
+          <h2>Distribuidores</h2>
+          <p>Ajude a levar cerveja de qualidade e legitimamente artesanal para os quatro cantos do país!</p>
+          <p><a class="btn btn-success" href="/api/distribuidores/login" role="button">Acessar &raquo;</a></p>
         </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">Indústrias <span class="text-muted">Artesanais</span></h2>
-            <p class="lead">Produtos legitimamente artesanais</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="/img/artesanal.jpg" alt="Copo com ingredientes de cerveja" style="border-radius: 10%">
-          </div>
+        <div class="col-lg-4">
+          <img class="rounded-circle" src="/img/cervejarias.jpg" alt="Imagem de barris de cerveja de inox" width="140"
+            height="140">
+          <h2>Cervejarias</h2>
+          <p>Mostre seu trabalho e divida seus sonhos com milhares de consumidores por todo o país!</p>
+          <p><a class="btn btn-success" href="/api/cervejarias/login" role="button">Acessar &raquo;</a></p>
         </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Negócios <span class="text-muted">Independentes!</span></h2>
-            <p class="lead">Fomentando o comércio local e os pequenos produtores</p>
-          </div>
-          <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="/img/independente.jpg" alt="Cerveja e ingredientes de cerveja" style="border-radius: 10%">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">Orgulho de ser <span class="text-muted">brasileiro!</span></h2>
-            <p class="lead">O melhor da cerveja e da cultura nacional!</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="/img/brasileira.jpg" alt="Copo com ingredientes de cerveja" style="border-radius: 10%">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
       </div>
 
-      <footer class="container">
-        <p class="float-right"><a href="#" style="color:green">Voltar ao topo</a></p>
-        <p>Caroline Jandoso - carol.jandoso@gmail.com</p>
-      </footer>
-    </main>
+      <hr class="featurette-divider">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-  </body>
-</html>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Indústrias <span class="text-muted">Artesanais</span></h2>
+          <p class="lead">Produtos legitimamente artesanais</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" src="/img/artesanal.jpg"
+            alt="Copo com ingredientes de cerveja" style="border-radius: 10%">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Negócios <span class="text-muted">Independentes!</span></h2>
+          <p class="lead">Fomentando o comércio local e os pequenos produtores</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="/img/independente.jpg"
+            alt="Cerveja e ingredientes de cerveja" style="border-radius: 10%">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Orgulho de ser <span class="text-muted">brasileiro!</span></h2>
+          <p class="lead">O melhor da cerveja e da cultura nacional!</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" src="/img/brasileira.jpg"
+            alt="Copo com ingredientes de cerveja" style="border-radius: 10%">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+    </div>
+
+    <footer class="container">
+      <p class="float-right"><a href="#" style="color:green">Voltar ao topo</a></p>
+      <p>Caroline Jandoso - carol.jandoso@gmail.com</p>
+    </footer>
+  </main>
+
+<%- include ("./partials/footer.ejs") %>

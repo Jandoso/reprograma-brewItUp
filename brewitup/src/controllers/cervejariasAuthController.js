@@ -11,7 +11,8 @@ exports.getLogin = (req, res) => {
 }
 
 exports.registro =  async (req, res) => {
-    const validarEmail = await CervejariasUsuarios.findOne({ email: req.body.email });
+    const { email } = req.body
+    const validarEmail = await CervejariasUsuarios.findOne({ email });
     if (!validarEmail) {
         const cervejariaUsuario = new CervejariasUsuarios(req.body);
     cervejariaUsuario.save((err, cervejariaUsuario) => {
