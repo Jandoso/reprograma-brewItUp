@@ -15,3 +15,21 @@ exports.post = (req, res) => {
         res.status(201).send(distribuidor);
     });
 };
+
+exports.delete = async (req, res) => {
+    const id = req.params.idDistribuidor;
+
+    await Distribuidores.findOne({ _id: id }, (err, distribuidor) => {
+        if (err) {
+            return res.status(500).send(err)
+        }
+        
+        distribuidor.remove(err => {
+            if(!err) res.status(200).json({
+              message: "Distribuidor deletado"
+           })
+        })
+    })
+    
+};
+
