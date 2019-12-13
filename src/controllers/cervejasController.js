@@ -4,13 +4,27 @@ const _ = require('lodash');
 const fs = require('fs');
 const Joi = require('joi');
 
+exports.getCervejasCervejaria = async (req, res) => {
+    const idCervejaria = req.params.cervejariaId;
+
+    const cervejas = await Cervejas.find({ cervejaria: idCervejaria })
+
+    if(!cervejas) {
+        res.status(404).json({
+            erro : "Não localizamos nenhuma cervejaria com o ID informado"
+        })
+    }
+
+    res.status(200).json({ cervejas });
+};
+
 exports.postCervejas = (req, res) => {
     let form = new formidable.IncomingForm();
     form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
         if(err) {
             return res.status(400).json({
-                error: 'Não foi possível fazer upload da imagem'
+                erro: "Não foi possível fazer upload da imagem"
             });
         }
 
@@ -21,51 +35,39 @@ exports.postCervejas = (req, res) => {
         if(files.foto) {
             if(files.foto.size > 1000000){
                 return res.status(400).json({
-                    error: 'A imagem não deve ter mais que 1mb'
+                    erro: "A imagem não deve ter mais que 1mb"
                 });
             } 
             cerveja.foto.data = fs.readFileSync(files.foto.path);
             cerveja.foto.contentType = files.foto.type;
         }
 
-        cerveja.save((err, resultado) => {
+        cerveja.save((err, cerveja) => {
             if(err) {
-                console.log('erro ao criar o produto', err)
                 return res.status(400).json({
-                    error: err
+                    erro: err
                 });
             }
-            res.json(resultado);
+            res.status(201).json({cerveja});
         });
     });
 };
 
-exports.getCervejasCervejaria = async (req, res) => {
-    const idCervejaria = req.params.cervejariaId;
-
-    const cervejas = await Cervejas.find({ cervejaria: idCervejaria })
-
-    if(!cervejas) {
-        res.json({
-            message: "Não consta nenhuma cerveja cadastrada para esta cervejaria"
-        })
-    }
-
-    res.status(200).send(cervejas);
-};
 
 exports.alterarCerveja = async (req, res) => {
     if(!validateForm(req.body)) return res.status(400).json({
-        mensagem: "Campos inválidos"
+        erro: "Campos inválidos"
     });
 
     const cervejaId = req.params.cervejaId;
 
     await Cervejas.findOne({ _id: cervejaId }, (err, cerveja) => {
-        if(err) res.status(500).send(err);
+        if(err) res.status(500).json({
+            erro: "Houve um erro ao localizar a cerveja, por favor tente novamente"
+        });
 
         if(!cerveja) return res.status(400).json({
-            mensagem: `Cerveja com o código ${cervejaId} não foi localizada`
+            erro: `Cerveja com o código ${cervejaId} não foi localizada`
         });
 
         Cervejas.updateOne(
@@ -101,14 +103,14 @@ const validateForm = (fields) => {
     return true;
 };
 
-exports.excluirCerveja = (req, res) => {
+exports.excluirCerveja = async (req, res) => {
     const cervejaId = req.params.cervejaId;
 
-    Cervejas.findOneAndDelete({ _id: cervejaId }, (err, cerveja) => {
+    await Cervejas.findOne({ _id: cervejaId }, (err, cerveja) => {
         if(err) res.status(500).send(err);
 
-        if(!cerveja) return res.status(404).json({
-            mensagem: `Cerveja com o código ${cervejaId} não foi localizada`
+        if(!cerveja) return res.status(400).json({
+            erro: `Cerveja com o código ${cervejaId} não foi localizada`
         })
 
         cerveja.remove( err => {

@@ -1,19 +1,23 @@
 const Cervejarias = require('../models/cervejaria');
 const Joi = require('joi');
 
-exports.get = (req, res) => {
-    Cervejarias.find(function (err, cervejarias) {
-        if (err) res.status(500).send(err);
-        res.status(200).send(cervejarias);
+exports.get = async (req, res) => {
+    await Cervejarias.find(function (err, cervejarias) {
+        if (err) res.status(500).json({
+            erro: "Houve um erro ao retornar a lista de cervejarias"
+        })
+        res.status(200).json({ cervejarias });
     });
 };
 
-exports.post = (req, res) => {
+exports.post = async (req, res) => {
     const cervejaria = new Cervejarias(req.body);
 
-    cervejaria.save(function(err) {
-        if(err) res.status(500).send(err);
-        res.status(201).send(cervejaria);
+    await cervejaria.save(function(err) {
+        if(err) res.status(400).json({
+            erro: "Houve um erro ao criar nova cervejaria, favor verifique os campos informados"
+        });
+        res.status(201).json({ cervejaria });
     });
 };
 
@@ -22,7 +26,9 @@ exports.delete = async (req, res) => {
 
     await Cervejarias.findOne({ _id: id }, (err, cervejaria) => {
         if (err) {
-            return res.status(500).send(err)
+            return res.status(400).json({
+                erro: "Não foi possível efeturar a exclusão do cadastro da cervejaria"
+            })
         }
         
         cervejaria.remove(err => {
@@ -34,14 +40,14 @@ exports.delete = async (req, res) => {
     
 };
 
-exports.put = (req, res) => {
+exports.put = async (req, res) => {
     const id = req.params.idCervejaria;
     
     if(!validateForm(req.body)) return res.status(400).json({
         message: "Campos inválidos"
     });
 
-    Cervejarias.updateOne(
+    await Cervejarias.updateOne(
         { _id: id },
         { $set: req.body },
         { upsert: true },

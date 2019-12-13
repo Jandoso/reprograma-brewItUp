@@ -12,11 +12,6 @@ const DistribuidoresSchema = new mongoose.Schema({
         required: true,
         maxlength: 100
     },
-    email: {
-        type: ObjectId,
-        ref: "cervejariaUsuario",
-        req: true
-    },
     telefone: {
         type: Number, 
         required: true,
@@ -63,7 +58,11 @@ const DistribuidoresSchema = new mongoose.Schema({
         required: true
     },
     equipeComercial: Boolean,
-    sommelier: Boolean 
+    sommelier: Boolean,
+    dadosLogin: {
+        type: ObjectId,
+        ref: "distribuidorUsuario"
+    }
 }, {
     timestamps: true
 }

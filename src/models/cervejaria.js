@@ -13,9 +13,7 @@ const CervejariasSchema = new mongoose.Schema({
         maxlength: 100
     },
     email: {
-        type: ObjectId,
-        ref: "cervejariaUsuario",
-        req: true
+        type: String
     },
     telefone: {
         type: Number, 
@@ -58,7 +56,11 @@ const CervejariasSchema = new mongoose.Schema({
         required: true,
         maxlength: 8
     }
-     }]
+     }],
+     dadosLogin: {
+        type: ObjectId,
+        ref: "cervejariaUsuario"
+    }
 }, {
     timestamps: true
 }

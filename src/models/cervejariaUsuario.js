@@ -12,6 +12,10 @@ const CervejariaUsuarioSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    role: {
+        type: Number,
+        default: 0
+    },
     salt: String
 }, {
     timestamps: true

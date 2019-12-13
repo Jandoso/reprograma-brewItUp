@@ -43,7 +43,7 @@ DELETE
 
 ### Cervejas
 
-POST /api/cervejas/create Rota de criação de novas cervejas. Excluiva para cervejarias HTTP 201 CREATED
+POST /api/cervejas/create/:cervejariaId Rota de criação de novas cervejas para determinada cervejaria. Exclusiva para cervejarias HTTP 201 CREATED
 
 GET /api/cervejas/:cervejariaId Rota que retorna uma lista de produtos disponíveis de determinada cervejaria. HTTP 200 OK
 
