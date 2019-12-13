@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 //Mongo DB
 mongoose.connect('mongodb+srv://jandosoGeneral:12345@omnistack-34kgb.mongodb.net/brewitup?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -15,8 +16,8 @@ db.once('open', function() {
 //ejs como view engine
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
-app.use(express.static('./src/public'));
-
+app.use("/", express.static('./src/public'));
+app.use("/api-doc", express.static('doc'));
 
 //Body Parser
 app.use(bodyParser.json());
@@ -36,9 +37,8 @@ app.use('/api/cervejarias', cervejarias);
 app.use('/api/cervejas', cervejas);
 app.use('/api/distribuidores', distribuidoresAuth);
 app.use('/api/distribuidores', distribuidores);
-app.use(express.static('doc'));
 app.get('/api-doc', (req, res) => {
-    res.sendFile('../doc/index.html');
+    res.sendFile(path.join(__dirname + '/public/doc/index.html'));
 });
 
 module.exports = app;
