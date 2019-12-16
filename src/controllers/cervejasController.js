@@ -4,6 +4,7 @@ const _ = require('lodash');
 const fs = require('fs');
 const Joi = require('joi');
 
+
 exports.getCervejasCervejaria = async (req, res) => {
     const idCervejaria = req.params.cervejariaId;
 
@@ -18,7 +19,7 @@ exports.getCervejasCervejaria = async (req, res) => {
     res.status(200).json({ cervejas });
 };
 
-exports.postCervejas = (req, res) => {
+exports.postCervejas =  (req, res) => {
     let form = new formidable.IncomingForm();
     form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
@@ -50,7 +51,7 @@ exports.postCervejas = (req, res) => {
             }
             res.status(201).json({cerveja});
         });
-    });
+    });  
 };
 
 

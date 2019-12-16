@@ -70,9 +70,3 @@ exports.logout = (req, res) => {
     }
 };
 
-exports.eCervejaria = async (req, res, next) => {
-    const usuario = await CervejariasUsuarios.find({ id: req.userId });
-    if(!usuario) return res.status(401).json({ erro: "Acesso restrito a cervejarias" })
-
-    return next();
-}

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const cervejasController = require('../controllers/cervejasController')
 const authMiddleware = require('../middlewares/auth');
-const { eCervejaria } = require('../controllers/cervejariasAuthController');
 
 router.use(authMiddleware);
 
@@ -110,7 +109,7 @@ router.get('/:cervejariaId', cervejasController.getCervejasCervejaria);
  *       "erro": "A imagem não deve ter mais que 1mb"
  *     }
  */
-router.post('/create/:cervejariaId', eCervejaria, cervejasController.postCervejas);
+router.post('/create/:cervejariaId', cervejasController.postCervejas);
 
 /**
  * @api {put} /api/cervejas/:cervejaId Requisição de alteração de cadastro de cerveja para determinada cervejaria
@@ -176,7 +175,7 @@ router.post('/create/:cervejariaId', eCervejaria, cervejasController.postCerveja
  *     }
  */
 
-router.put('/:cervejaId', eCervejaria, cervejasController.alterarCerveja);
+router.put('/:cervejaId', cervejasController.alterarCerveja);
 
 
 /**
@@ -206,6 +205,6 @@ router.put('/:cervejaId', eCervejaria, cervejasController.alterarCerveja);
  *     }
  */
 
-router.delete('/:cervejaId', eCervejaria, cervejasController.excluirCerveja);
+router.delete('/:cervejaId', cervejasController.excluirCerveja);
 
 module.exports = router;
