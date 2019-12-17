@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const cervejariasController = require('../controllers/cervejariasController');
-const authMiddleware = require('../middlewares/auth');
-
-router.use(authMiddleware);
+const { isAuthenticated, eCervejaria } = require('../middlewares/auth')
 
 /**
  * @api {get} /api/cervejarias Requisição de lista completa de cervejarias cadastradas
@@ -52,7 +50,7 @@ router.use(authMiddleware);
  *     }
  */
 
-router.get('/', cervejariasController.get);
+router.get('/', isAuthenticated, cervejariasController.get);
 
 /**
  * @api {post} /api/cervejarias Requisição de cadastro completo de cervejarias
@@ -112,7 +110,7 @@ router.get('/', cervejariasController.get);
  *       "erro": "Houve um erro ao criar nova cervejaria, favor verifique os campos informados"
  *     }
  */
-router.post('/', cervejariasController.post);
+router.post('/', isAuthenticated, eCervejaria, cervejariasController.post);
 
 
 /**
@@ -141,7 +139,7 @@ router.post('/', cervejariasController.post);
  *       "erro": "Não foi possível efeturar a exclusão do cadastro da cervejaria"
  *     }
  */
-router.delete('/:idCervejaria', cervejariasController.delete);
+router.delete('/:idCervejaria', isAuthenticated, eCervejaria, cervejariasController.delete);
 
 
 /**
@@ -182,6 +180,6 @@ router.delete('/:idCervejaria', cervejariasController.delete);
  *       "erro": "Campos inválidos"
  *     }
  */
-router.put('/:idCervejaria', cervejariasController.put);
+router.put('/:idCervejaria', isAuthenticated, eCervejaria, cervejariasController.put);
 
 module.exports = router;

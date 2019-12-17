@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const distribuidoresController = require('../controllers/distribuidoresController');
-const authMiddleware = require('../middlewares/auth');
+const { isAuthenticated, eDistribuidor } = require('../middlewares/auth')
 
-router.use(authMiddleware);
 
 
 /**
@@ -57,7 +56,7 @@ router.use(authMiddleware);
  */
 
 
-router.get('/', distribuidoresController.get);
+router.get('/', isAuthenticated, distribuidoresController.get);
 
 
 /**
@@ -125,7 +124,7 @@ router.get('/', distribuidoresController.get);
  *       "erro": "Houve um erro ao criar novo distribuidor, favor verifique os campos informados"
  *     }
  */
-router.post('/', distribuidoresController.post);
+router.post('/', isAuthenticated, eDistribuidor, distribuidoresController.post);
 
 
 /**
@@ -155,7 +154,7 @@ router.post('/', distribuidoresController.post);
  *     }
  */
 
-router.delete('/:idDistribuidor', distribuidoresController.delete);
+router.delete('/:idDistribuidor', isAuthenticated, eDistribuidor, distribuidoresController.delete);
 
 
 /**
@@ -200,7 +199,7 @@ router.delete('/:idDistribuidor', distribuidoresController.delete);
  *       "erro": "Campos inválidos"
  *     }
  */
-router.put('/:idDistribuidor', distribuidoresController.put);
+router.put('/:idDistribuidor', isAuthenticated, eDistribuidor, distribuidoresController.put);
 
 
 module.exports = router;

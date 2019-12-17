@@ -53,10 +53,10 @@ exports.login = async (req, res) => {
             })
         }
 
-        const token = jwt.sign({_id: distribuidorUsuario._id}, authConfig.secret)
+        const token = jwt.sign({ _id: distribuidorUsuario._id, role: distribuidorUsuario.role }, authConfig.secret)
         res.cookie('t', token, {expire: authConfig.expiresIn})
-        const {_id, email} = distribuidorUsuario;
-        return res.json({token, distribuidorUsuario: _id, email})
+        const {_id, email, role } = distribuidorUsuario;
+        return res.json({token, distribuidorUsuario: _id, email, role })
     });
 };
 

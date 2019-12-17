@@ -52,10 +52,10 @@ exports.login = async (req, res) => {
             })
         }
 
-        const token = jwt.sign({ id: cervejariaUsuario.id},authConfig.secret)
+        const token = jwt.sign({ id: cervejariaUsuario.id, role: cervejariaUsuario.role},authConfig.secret)
         res.cookie('t', token, {expire: authConfig.expiresIn})
-        const { id, email} = cervejariaUsuario
-        return res.status(200).json({token, cervejariaUsuario: { id, email }})
+        const { id, email, role } = cervejariaUsuario
+        return res.status(200).json({token, cervejariaUsuario: { id, email, role }})
     });
 };
 
@@ -69,4 +69,3 @@ exports.logout = (req, res) => {
         })
     }
 };
-

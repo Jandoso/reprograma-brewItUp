@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const cervejasController = require('../controllers/cervejasController')
-const authMiddleware = require('../middlewares/auth');
 
-router.use(authMiddleware);
+const { isAuthenticated, eCervejaria } = require('../middlewares/auth')
+
 
 /**
  * @api {get} /api/cervejas/:cervejariaId Requisição de lista completa de cervejas (produtos) de determinada cervejaria cadastrada
@@ -45,8 +45,10 @@ router.use(authMiddleware);
  *       "erro": "Não localizamos nenhuma cervejaria com o ID informado"
  *     }
  */
-router.get('/:cervejariaId', cervejasController.getCervejasCervejaria);
 
+router.get('/:cervejariaId', isAuthenticated, cervejasController.getCervejasCervejaria);
+
+router.get('/lista/:escola', isAuthenticated, cervejasController.getCervejaPorEscola);
 
 /**
  * @api {post} /api/cervejas/create/:cervejariaId Requisição de cadastro de cerveja para determinada cervejaria
@@ -109,7 +111,9 @@ router.get('/:cervejariaId', cervejasController.getCervejasCervejaria);
  *       "erro": "A imagem não deve ter mais que 1mb"
  *     }
  */
-router.post('/create/:cervejariaId', cervejasController.postCervejas);
+
+// router.use(cervejariaAuthMiddleware)
+router.post('/create/:cervejariaId', isAuthenticated, eCervejaria ,cervejasController.postCervejas);
 
 /**
  * @api {put} /api/cervejas/:cervejaId Requisição de alteração de cadastro de cerveja para determinada cervejaria
@@ -175,7 +179,7 @@ router.post('/create/:cervejariaId', cervejasController.postCervejas);
  *     }
  */
 
-router.put('/:cervejaId', cervejasController.alterarCerveja);
+router.put('/:cervejaId', isAuthenticated, eCervejaria, cervejasController.alterarCerveja);
 
 
 /**
@@ -205,6 +209,8 @@ router.put('/:cervejaId', cervejasController.alterarCerveja);
  *     }
  */
 
-router.delete('/:cervejaId', cervejasController.excluirCerveja);
+router.delete('/:cervejaId', isAuthenticated, eCervejaria, cervejasController.excluirCerveja);
+
+
 
 module.exports = router;

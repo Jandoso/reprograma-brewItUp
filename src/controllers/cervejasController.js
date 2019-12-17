@@ -121,3 +121,17 @@ exports.excluirCerveja = async (req, res) => {
         });
     });
 };
+
+exports.getCervejaPorEscola = async (req, res) => {
+    const escola = req.params.escola;
+
+    await Cervejas.find({ escola }, (err, lista) => {
+        if (err) res.status(500).send(err)
+
+        if(!lista) res.status(400).json({ message: `Não existe nenhuma cerveja da escola ${escola} cadastrada em nosso banco de dados`})
+
+        res.status(200).json({
+            lista
+        })
+    })
+}

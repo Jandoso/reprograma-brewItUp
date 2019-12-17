@@ -5,9 +5,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 //Mongo DB
- mongoose.connect('mongodb+srv://jandosoGeneral:12345@omnistack-34kgb.mongodb.net/brewitup?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb+srv://jandosoGeneral:12345@omnistack-34kgb.mongodb.net/brewitup?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
-//mongoose.connect('mongodb://localhost:27017/brewitup', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/brewitup', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', console.log.bind(console, 'connection error:'))
