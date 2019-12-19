@@ -55,19 +55,25 @@ PUT api/cervejas/:cervejaId Rota que atualiza um certo item de de acordo com seu
 DELETE api/cervejas/:cervejaId Rota que deleta um item baseado em seu id. HTTP 200 OK
 
 ### Download e Instalação
-git clone https://github.com/Jandoso/reprograma-brewItUp.git
+```
+git clone https://github.com/Jandoso/reprograma-brewItUp.git 
 cd reprograma-brewItUp
 npm install
 npm start
+```
 
 ### Como rodar a aplicação
+```
 1 - Abra o postman
 2 - Importe o arquivo reprograma.brewitup.postman_collection
 3 - A coleção do projeto no Postman será importada com todas as rotas e seus corpos de requisição prontos
 4 - Para a visualização da página inicial, registro e login acesse http://localhost:8080/api no browser
+```
 
 ### Documentação
+```
 http//:localhost:8080/api-doc
+```
 
 ### Techs e conceitos aplicados: 
 - Bootstrap
