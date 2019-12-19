@@ -4,7 +4,8 @@ Projeto Final | Backend | {reprograma} + Mercado Livre
 A Brew It Up é uma plataforma que integra pequenas cervejarias e distribuidoras.O objetivo é permitir a distribuição de pequenas produções em regiões não antes atendidas, além de prover maior diversidade, disponibilidade e qualidade de produtos para os distribuidores.
 
 ### Cenário
-Em 2019, atingimos a marca de mais de 800 cervejarias inscritas no MAPA - Ministério da Agricultura e Produção Agropecuária. Grande parte destas cervejarias não possuem estrutura de logística e atendimento, dificultando a expansão de suas vendas. Outra questão importante que preocupa os pequenos produtores é com a qualidade com que seus produtos irão chegar até os pontos de vendas, afinal há uma grande tendência de produção de cervejas não pasteurizadas, necessitando de cadeia refrigerada. </br>
+O Brasil é o terceiro maior produtor de cervejas no mundo, sendo que o mercado é responsável por mais de 2% do PIB nacional. Apesar de hoje o segmento das cervejas artesanais representar apenas um pouco mais de 1% de todo o volume produzido, cresce a uma velocidade alta, dobrando o número de cervejarias entre 2015 e 2018. Em 2018, atingimos a marca de mais de 900 cervejarias inscritas no MAPA - Ministério da Agricultura e Produção Agropecuária. </br>
+Grande parte destas cervejarias não possuem estrutura de logística e atendimento, dificultando a expansão de suas vendas. Outra questão importante que preocupa os pequenos produtores é com a qualidade com que seus produtos irão chegar até os pontos de vendas, afinal há uma grande tendência de produção de cervejas não pasteurizadas, necessitando de cadeia refrigerada. </br>
 Por outro lado, diversas distribuidoras apresentam capacidade ociosa em sua estrutura logística e de atendimento ao cliente. Algumas destas distribuidoras também enfrantam a falta de produtos no mercado, prejudicando o atendimento aos pontos de vendas. 
 
 ### Rotas/EndPoints
@@ -21,9 +22,9 @@ POST /api/cervejarias/login Rota para login de cervejarias HTTP 200 OK
 
 GET /api/cervejarias/logout Rota para logout de cervejarias HTTP 200 0K
 
-PUT
+PUT /api/cervejarias/:idCervejaria Rota para alteração de dados cadastrais de determinada cervejaria HTTP 200 OK
 
-DELETE
+DELETE /api/cervejarias/:idCervejaria Rota para a deleção dos dados cadastrais de determinada cervejaria HTTP 200 OK
 
 ### Distribuidores
 
@@ -37,15 +38,17 @@ POST /api/distribuidores/login Rota para login de distribuidores HTTP 200 OK
 
 GET /api/distribuidores/logout Rota para logout de distribuidores HTTP 200 0K
 
-PUT
+PUT /api/distribuidores/:idDistribuidor Rota para alteração de dados cadastrais de determinado distribuidor HTTP 200 OK
 
-DELETE
+DELETE /api/distribuidores/:idDistribuidor Rota para a deleção dos dados cadastrais de determinado distribuidor HTTP 200 OK
 
 ### Cervejas
 
 POST /api/cervejas/create/:cervejariaId Rota de criação de novas cervejas para determinada cervejaria. Exclusiva para cervejarias HTTP 201 CREATED
 
 GET /api/cervejas/:cervejariaId Rota que retorna uma lista de produtos disponíveis de determinada cervejaria. HTTP 200 OK
+
+GET /api/cervejas/lista/:escola Rota que retorna uma lista de cervejas de determinada escola cervejeira HTTP 200 OK
 
 PUT api/cervejas/:cervejaId Rota que atualiza um certo item de de acordo com seu ID HTTP 200 OK
 
